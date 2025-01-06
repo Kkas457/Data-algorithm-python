@@ -31,12 +31,34 @@ class LinkedList:
         self.head = None
         self.length = 0
 
-    # WRITE REVERSE_BETWEEN METHOD HERE #
-    #                                   #
-    #                                   #
-    #                                   #
-    #                                   #
-    #####################################
+    def reverse_between(self, x, y):
+        if x < 0 or y > self.length or x > self.length:
+            return None
+        
+        start = self.head
+        end = self.head
+        for _ in range(x):
+            start = start.next
+
+        for _ in range(y):
+            end = end.next
+        
+        print(f"start: {start.value}; end: {end.value}\n\n\n")
+        # temp = start
+        # start = end
+        # end = temp
+
+        # prev = None
+        # curr = temp.next
+        # z = y - x
+        # while z>0:
+        #     curr = temp.next
+        #     curr.next = prev
+        #     prev = curr
+        #     curr = temp
+        #     z -= 1
+        
+        # return self
     
 
 
