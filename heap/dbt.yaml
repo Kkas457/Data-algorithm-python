@@ -1,0 +1,16 @@
+pipeline_name: dbt_ingest
+source:
+  type: "dbt"
+  config:
+    # Coordinates
+    # To use this as-is, set the environment variable DBT_PROJECT_ROOT to the root folder of your dbt project
+    manifest_path: "/opt/airflow/dbt/e_obr/target/manifest.json"
+    catalog_path: "/opt/airflow/dbt/e_obr/target/catalog.json"
+    sources_path: "/opt/airflow/dbt/e_obr/target/sources.json" # optional for freshness
+    run_results_paths:
+      - "/opt/airflow/dbt/e_obr/target/run_results.json" # optional for recording dbt test results after running dbt test
+
+    # Options
+    # target_platform: "my_target_platform_id" # e.g. bigquery/postgres/etc.
+
+# sink configs
